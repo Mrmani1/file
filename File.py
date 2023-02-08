@@ -183,8 +183,7 @@ def sarfraz():
     print
 
     print(' [1] Start File Cloning')
-
-    print(' [2] Create File [Best-Method]')
+    
 
     print(' [E] exit ')
 
